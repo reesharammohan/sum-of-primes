@@ -1,7 +1,9 @@
 package com.sample.prime.service;
 
+import com.sample.prime.response.PrimeResponse;
+
 public interface PrimeService {
 
-	long getSumOfPrimes(int number);
+	PrimeResponse getSumOfPrimes(int number);
 
 }
