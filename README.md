@@ -10,6 +10,7 @@ To build and run this application, you will need:
 
 - Java JDK 17
 - Maven 3
+- Docker tool box
 
 ## Getting Started
 
@@ -41,3 +42,7 @@ The endpoint 'GET/sumOfPrimes' takes an input and returns the sum of all prime n
   "result": 3682913
 }
 ```
+
+## Dockerization
+
+Install Docker tool. Open Docker quickstart terminal and navigate to the project directory. Run `docker build -t app.jar .` for creating the image and `docker run -p 9090:8080 app.jar` for running the image in docker local. The application gets started on the default machine IP `http://[Machine IP]:9090/swagger-ui/index.html`
