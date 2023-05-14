@@ -33,7 +33,7 @@ public class PrimeApplicationTests {
 		PrimeResponse expectedResponse = new PrimeResponse();
 		expectedResponse.setMessage("Input value should be less than 10 million");
 		expectedResponse.setResult(0);
-		PrimeResponse actualResponse = primeService.getSumOfPrimes(10000000);
+		PrimeResponse actualResponse = primeService.getSumOfPrimes(100000000);
 		assertEquals(expectedResponse.getResult(), actualResponse.getResult());
 		assertEquals(expectedResponse.getMessage(), actualResponse.getMessage());
 	}
