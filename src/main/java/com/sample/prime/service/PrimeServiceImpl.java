@@ -17,7 +17,6 @@ public class PrimeServiceImpl implements PrimeService {
 
 	@Override
 	public PrimeResponse getSumOfPrimes(int number) {
-		// TODO Auto-generated method stub
 		PrimeResponse primeResponse = new PrimeResponse();
 		try
 		{
@@ -26,29 +25,35 @@ public class PrimeServiceImpl implements PrimeService {
 				primeResponse.setMessage("Input value should be less than 10 million");
 			} 
 			else {
+				
+				/* We initialize a list of prime numbers with 2 and add it to the sum. 
+		        Then we loop through odd numbers starting from 3 until we have generated n prime numbers.
+		        For each odd number, we check if it is divisible by any of the previously generated prime numbers.
+		        If it is not divisible by any of the primes, then it is a new prime number, and we add it to the list of primes and to the sum.*/
+				
 				long sum = 0;
-		        List<Integer> primes = new ArrayList<>();
-		        primes.add(2);
+		        List<Integer> primesList = new ArrayList<>();
+		        primesList.add(2);
 		        sum += 2;
-		
-		        for (int i = 3; primes.size() < number; i += 2) {
+		        
+		        for (int i = 3; primesList.size() < number; i += 2) {
 		            boolean isPrime = true;
 		
-		            for (int j = 0; j < primes.size(); j++) {
-		                int p = primes.get(j);
+		            for (int j = 0; j < primesList.size(); j++) {
+		                int primeNum = primesList.get(j);
 		
-		                if (p * p > i) {
+		                if (primeNum * primeNum > i) {
 		                    break;
 		                }
 		
-		                if (i % p == 0) {
+		                if (i % primeNum == 0) {
 		                    isPrime = false;
 		                    break;
 		                }
 		            }
 		
 		            if (isPrime) {
-		                primes.add(i);
+		            	primesList.add(i);
 		                sum += i;
 		            }
 		        }
